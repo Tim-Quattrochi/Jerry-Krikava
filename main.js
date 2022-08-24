@@ -9,8 +9,38 @@ const size = carouselImages[0].clientWidth;
 
 carouselSlide.style.transform = "translateX(" + (-size * counter) + "px)";
 
-nextItem.addEventListener("click", () => {
-  if(counter >= carouselImages.length -1) return
+
+const rightArrow = (e) => {
+  console.log(e)
+  if (counter >= carouselImages.length - 1) return
+  if (e.key === "ArrowRight") {
+    carouselSlide.style.transition = "transform 0.4s ease-in-out";
+    counter++;
+    carouselSlide.style.transform = "translateX(" + (-size * counter) + "px)";
+    console.log(counter)
+  }
+}
+
+carouselSlide.addEventListener("keydown", rightArrow)
+
+
+const leftArrow = (e) => {
+  if (counter >= carouselImages.length - 1) return
+  if (e.key === "ArrowLeft") {
+    carouselSlide.style.transition = "transform 0.4s ease-in-out";
+    counter--;
+    carouselSlide.style.transform = "translateX(" + (-size * counter) + "px)";
+    console.log(counter)
+  }
+}
+
+
+carouselSlide.addEventListener("keydown", leftArrow)
+
+
+nextItem.addEventListener("click", (e) => {
+
+  if (counter >= carouselImages.length - 1) return
   carouselSlide.style.transition = "transform 0.4s ease-in-out";
   counter++;
   carouselSlide.style.transform = "translateX(" + (-size * counter) + "px)";
@@ -18,28 +48,28 @@ nextItem.addEventListener("click", () => {
 });
 
 
-previousItem.addEventListener("click",() => {
+previousItem.addEventListener("click", () => {
   if (counter <= 0) return
 
   carouselSlide.style.transition = "transform 0.4s ease-in-out";
   counter--;
-  carouselSlide.style.transform = "translateX(" + (-size * counter )+ "px)";
+  carouselSlide.style.transform = "translateX(" + (-size * counter) + "px)";
   console.log(counter)
 });
 
-carouselSlide.addEventListener("transitionend",() =>{
+carouselSlide.addEventListener("transitionend", () => {
   console.log(carouselImages[counter])
-  if (carouselImages[counter].id === "lastClone"){
+  if (carouselImages[counter].id === "lastClone") {
     carouselSlide.style.transition = "none"
     counter = carouselImages.length - 2
-  carouselSlide.style.transform = "translateX(" + (-size * counter) + "px)";
-  console.log("fired")
+    carouselSlide.style.transform = "translateX(" + (-size * counter) + "px)";
+    console.log("fired")
 
   }
-  if (carouselImages[counter].id === "firstClone"){
+  if (carouselImages[counter].id === "firstClone") {
     carouselSlide.style.transition = "none"
     counter = carouselImages.length - counter
-  carouselSlide.style.transform = "translateX(" + (-size * counter) + "px)";
+    carouselSlide.style.transform = "translateX(" + (-size * counter) + "px)";
   }
 })
 
