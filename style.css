@@ -1,104 +1,98 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    background: white;
+  margin: 0;
+  background: white;
 }
 .header-container {
-    border: 1px solid rgba(128, 128, 128, 0.331);
-    background-color: gray;
-    height: 200px;
-    display: flex;
-    box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+  border: 1px solid rgba(128, 128, 128, 0.331);
+  background-color: gray;
+  height: 200px;
+  display: flex;
+  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.2);
 
-
-    align-content: center;
-    justify-content: space-between;
-    align-items: center;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
 }
 
-
-
 nav {
-    align-self: flex-end;
-
+  align-self: flex-end;
 }
 
 .nav-container {
-    display: flex;
-    gap: 3px;
-
+  display: flex;
+  gap: 3px;
 }
 
 a {
-    text-decoration: none;
-    color: aquamarine;
-    background-color: gray;
-    border: 2px solid aquamarine;
-    font-size: large;
-
+  text-decoration: none;
+  color: aquamarine;
+  background-color: gray;
+  border: 2px solid aquamarine;
+  font-size: large;
 }
 
 a:hover {
-    color: rgb(0, 205, 137);
+  color: rgb(0, 205, 137);
 }
 
 h1 {
-    color: aquamarine;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: gray;
+  color: aquamarine;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: gray;
 
-    align-self: flex-end;
-
+  align-self: flex-end;
 }
 
-/* Jerry's remeberence page */
+/* Jerry's remembrance page */
 
 .carousel-container {
-    position: relative;
-    width: 55%;
-    margin: auto;
-    border: 5px solid black;
-    overflow: hidden;
-
-  
- 
+  position: relative;
+  width: 55%;
+  margin: auto;
+  border: 5px solid black;
+  overflow: hidden;
 }
 
 .carousel-slide {
-    display: flex;
-    width: 100%;
-    height: 500px;
-    
+  display: flex;
+  width: 100%;
+  height: 500px;
 }
 
 #previous {
-    position: absolute;
-    top: 50%;
-    z-index: 10;
-    left: 5%;
-    color: white;
-    opacity: 0.7;
-    font-size: 30px;
-    cursor: pointer;
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  left: 5%;
+  color: white;
+  opacity: 0.7;
+  font-size: 30px;
+  cursor: pointer;
 }
 
 #next {
-    position: absolute;
-    top: 50%;
-    z-index: 10;
-    right: 5%;
-    color: white;
-    opacity: 0.7;
-    font-size: 30px;
-    cursor: pointer;
-
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  right: 5%;
+  color: white;
+  opacity: 0.5;
+  font-size: 30px;
+  cursor: pointer;
 }
 
+#explanation {
+  border: 2px solid blueviolet;
+
+  color: blueviolet;
+  text-align: center;
+}
 
 /* #div-container {
     height: 200px;
