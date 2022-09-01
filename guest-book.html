@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Guest Book</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+      integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <header class="header-container">
+      
+        </li>
+      </ul>
+      <h1>Jerry's remembrance page.</h1>
+      <img src="img/Jerry copy.png" alt="Picture of an Autism puzzle piece" />
+      <nav class="nav-container">
+        <a href="index.html">Home</a>
+        <a href="#">Pictures</a>
+        <a href="guest-book.html">Guest Book</a>
+        <a href="#">About</a>
+      </nav>
+      
+    </header>
+    
+    <h1>Sign the Guest Book</h1>
+    <form id="form">
+      <div id="book-container">
+        <label for="name">Enter your name:</label>
+        <input type="text" name="name" id="name" />
+
+        <label id="msg-header" for="message"
+          >Leave a message for the guest book!</label
+        >
+
+        <textarea
+          id="message"
+          name="message"
+          rows="15"
+          cols="50"
+          autocomplete="off"
+          required
+        >
+        </textarea>
+        <button id="send">Add message</button>
+      </div>
+      <div id="msg">
+        <pre></pre>
+      </div>
+    </form>
+
+    <p id="dataShow"></p>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
+  </body>
+  <script type="module" src="./gbook.js"></script>
+</html>

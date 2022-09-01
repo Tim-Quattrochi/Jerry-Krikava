@@ -6,15 +6,16 @@
 
 body {
   margin: 0;
-  background: white;
+  background: #e7e5cf;
 }
 .header-container {
   border: 1px solid rgba(128, 128, 128, 0.331);
-  background-color: gray;
+  background-color: #6bbd99;
   height: 200px;
   display: flex;
   box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.2);
 
+  margin: 20px;
   align-content: center;
   justify-content: space-between;
   align-items: center;
@@ -26,13 +27,13 @@ nav {
 
 .nav-container {
   display: flex;
-  gap: 3px;
+  gap: 10px;
 }
 
 a {
   text-decoration: none;
   color: aquamarine;
-  background-color: gray;
+  background-color: rgb(34, 166, 199);
   border: 2px solid aquamarine;
   font-size: large;
 }
@@ -44,7 +45,10 @@ a:hover {
 h1 {
   color: aquamarine;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: gray;
+  background-color: #6bbd99;
+  width: 50vw;
+  margin: auto;
+  text-align: center;
 
   align-self: flex-end;
 }
@@ -92,6 +96,66 @@ h1 {
 
   color: blueviolet;
   text-align: center;
+}
+
+/* guest book css */
+label,
+textarea {
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+}
+textarea {
+  display: block;
+
+  text-align: center;
+  padding: 10px;
+  max-width: 100%;
+  line-height: 1.5;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 1px #999;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#book-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+textarea#message {
+  text-align: center;
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#msg-header {
+  text-align: center;
+  margin-top: 25px;
+}
+
+#send {
+  display: block;
+  text-align: center;
+}
+
+#dataShow {
+  border: 2px solid #6bbd99;
+  color: #98dad9;
+  width: 100vw;
+  height: 250px;
+}
+
+#commentCard {
+  border: 2px solid #e65c4f;
 }
 
 /* #div-container {

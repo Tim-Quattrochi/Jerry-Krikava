@@ -1,0 +1,13 @@
+$primary-color: red;
+$font-weights: (
+    "regular": 400,
+    "medium": 500,
+    "bold": 700,
+);
+
+
+
+body {
+    background: $primary-color;
+    font-weight: map-get($font-weights, medium );
+}

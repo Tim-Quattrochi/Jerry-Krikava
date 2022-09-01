@@ -1,0 +1,16 @@
+{
+  "name": "jerrys-website",
+  "version": "1.0.0",
+  "description": "Just started working on a tribute website to my Brother Jerry, who passed away in March 2022. My plan is to use what I have learned at Kenzie academy to build  A nice tribute site for my brother.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "firebase": "^9.9.3"
+  }
+}
