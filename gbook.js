@@ -56,8 +56,11 @@ const getDate = () => {
 
 generateRandomId()
 
-function insertData() {
-    event.preventDefault()
+function insertData(e) {
+    e.preventDefault()
+
+    if (e.target.value === "") { return }
+
     push(ref(db, "users/"), {
         date: getDate(),
         name: enterName.value,
@@ -69,7 +72,11 @@ function insertData() {
         .catch((error) => {
             alert(error)
         })
-    location.reload();
+
+    setTimeout(() => {
+        location.reload();
+
+    }, 5000)
 }
 
 
