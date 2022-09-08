@@ -5,15 +5,17 @@
 }
 
 body {
+  font-family: "Caladea";
+  font-size: 22px;
   margin: 0;
-  background: #e7e5cf;
+  background: #fefdfb;
 }
 .header-container {
-  border: 1px solid rgba(128, 128, 128, 0.331);
-  background-color: #6bbd99;
-  height: 200px;
+  border: 1px solid #e65c4f;
+  background-color: #98dad9;
+  height: 100%;
   display: flex;
-  box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, 0.2);
+  /* box-shadow: 9px 9px 9px 9px #e65c4f; */
 
   margin: 20px;
   align-content: center;
@@ -32,9 +34,8 @@ nav {
 
 a {
   text-decoration: none;
-  color: aquamarine;
   background-color: rgb(34, 166, 199);
-  border: 2px solid aquamarine;
+  border: 1px solid aquamarine;
   font-size: large;
 }
 
@@ -44,7 +45,6 @@ a:hover {
 
 h1 {
   color: aquamarine;
-  font-family: Arial, Helvetica, sans-serif;
   background-color: #6bbd99;
   width: 50vw;
   margin: auto;
@@ -104,37 +104,65 @@ textarea {
   font-size: 0.8rem;
   letter-spacing: 1px;
 }
-textarea {
-  display: block;
 
-  text-align: center;
-  padding: 10px;
-  max-width: 100%;
-  line-height: 1.5;
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  box-shadow: 1px 1px 1px #999;
-}
-
-label {
+/* label {
   display: block;
   margin-bottom: 10px;
   margin-left: auto;
   margin-right: auto;
+} */
+
+/* #name {
+  height: 30px;
+  width: 200px;
+} */
+
+.custom-field {
+  font-size: 14px;
+  position: relative;
+
+  border-top: 20px solid transparent;
 }
 
+.custom-field input {
+  border: none;
+  -webkit-appearance: none;
+  -ms-appearance: none;
+  -moz-appearance: none;
+  background: #f2f2f2;
+  padding: 12px;
+  border-radius: 3px;
+  width: 250px;
+  font-size: 14px;
+}
+
+.custom-field .placeholder {
+  position: absolute;
+  left: 12px;
+  bottom: 50%;
+  top: 22px;
+  color: #aaa;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
 #book-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-textarea#message {
-  text-align: center;
+textarea {
+  outline: none;
+  resize: none;
+  height: 150px;
+  padding: 12px 20px;
   display: block;
-  text-align: center;
+
   margin-left: auto;
   margin-right: auto;
+  background: #f2f2f2;
+  border: none;
+  border-radius: 4px;
 }
 
 #msg-header {
@@ -143,38 +171,82 @@ textarea#message {
 }
 
 #send {
-  display: block;
+  margin-bottom: 5%;
+  background-color: #c2fbd7;
+  border-radius: 100px;
+  box-shadow: rgba(44, 187, 99, 0.2) 0 -25px 18px -14px inset,
+    rgba(44, 187, 99, 0.15) 0 1px 2px, rgba(44, 187, 99, 0.15) 0 2px 4px,
+    rgba(44, 187, 99, 0.15) 0 4px 8px, rgba(44, 187, 99, 0.15) 0 8px 16px,
+    rgba(44, 187, 99, 0.15) 0 16px 32px;
+  color: green;
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular, -apple-system, system-ui, Roboto, sans-serif;
+  padding: 7px 20px;
   text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+#send:hover {
+  box-shadow: rgba(44, 187, 99, 0.35) 0 -25px 18px -14px inset,
+    rgba(44, 187, 99, 0.25) 0 1px 2px, rgba(44, 187, 99, 0.25) 0 2px 4px,
+    rgba(44, 187, 99, 0.25) 0 4px 8px, rgba(44, 187, 99, 0.25) 0 8px 16px,
+    rgba(44, 187, 99, 0.25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
 }
 
 #dataShow {
-  border: 2px solid #6bbd99;
-  color: #98dad9;
-  width: 100vw;
-  height: 250px;
 }
 
 #commentCard {
   border: 2px solid #e65c4f;
 }
 
-/* #div-container {
-    height: 200px;
-    border: 2px dotted blue;
-    background-color: rgb(229, 229, 237);
-    width: 50px;
-    display: flex;
-    flex-direction: row;
-     
-}  */
+#gb-title {
+  width: 30%;
+}
 
-/* span {
-     border: 2px solid red; 
-    background-color: navy ;
-    height: 200px;
-    display: flex;
-    width: 140px;
-    flex-shrink: 0;
-    flex-grow: 0
-   
-} */
+#commentContainer {
+  border: 1px solid #e65c4f;
+  background-color: #98dad9;
+  border-radius: 5px;
+  padding: 16px;
+  margin: auto;
+  overflow-wrap: break-word;
+  width: 50%;
+}
+
+#commentContainer::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+#commentContainer span {
+  font-size: 20px;
+  margin-right: 15px;
+}
+
+@media (max-width: 500px) {
+  #commentContainer {
+    text-align: center;
+  }
+}
+
+#date {
+  width: 200px;
+  font-size: medium;
+  color: #fdd037;
+  background-color: #6bbd99;
+}
+
+#msg {
+  color: #e65c4f;
+  text-align: center;
+}

@@ -1,3 +1,4 @@
+
 const carouselSlide = document.querySelector(".carousel-slide");
 const carouselImages = document.querySelectorAll(".carousel-slide img");
 
@@ -72,6 +73,7 @@ carouselSlide.addEventListener("transitionend", () => {
     carouselSlide.style.transform = "translateX(" + (-size * counter) + "px)";
   }
 })
+
 
 
 
