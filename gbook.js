@@ -38,10 +38,19 @@ const generateRandomId = () => {
 
 let enterName = document.getElementById("name")
 let enterMessage = document.getElementById("message")
+let form = document.getElementById("form")
+let successMsg = document.getElementById("msg")
+
+
+
+///not in use yet
 let renderPosts = document.getElementById("dataShow")
 let sendBtn = document.getElementById("send")
 let findName = document.querySelector("#findName")
 let findBtn = document.getElementById("find")
+
+
+
 
 const getDate = () => {
     const date = new Date().toLocaleString('en-us',
@@ -58,19 +67,22 @@ generateRandomId()
 
 function insertData(e) {
     e.preventDefault()
+    console.log("submit")
+    console.log(enterMessage.length)
 
-    if (e.target.value === "") { return }
-
+    //if the form is blank, return.
+    if (enterName.length === 0 || enterMessage.length <= 1) { return }
     push(ref(db, "users/"), {
         date: getDate(),
         name: enterName.value,
         message: enterMessage.value,
     })
         .then(() => {
-            alert("Success")
+            successMsg.innerHTML = "Your message has been posted!"
         })
         .catch((error) => {
-            alert(error)
+            successMsg.innerHTML = "Sorry, something went wrong. Please try again later."
+
         })
 
     setTimeout(() => {
@@ -86,19 +98,17 @@ function upDateData() {
     get(child(dbRef, `users`)).then((snapshot) => {
 
         if (snapshot.exists()) {
+
             const commentValues = Object.values(snapshot.val())
             let dataShow = document.getElementById("dataShow")
 
-            //Render the guest book posts with bootstrap classes.
-            dataShow.innerHTML = commentValues.map((user) => `<div class="card-group">
-   <div class="card border-primary mb-3" style="max-width: 18rem">
-   <div class="card-header">${user.name} says:</div>
-   <div class="card-body text-primary">
-   <h5 class="card-title">${user.message}</h5>
-    <p class="card-text"> ${user.date}</p>
-    </div>
-    </div>
-    `)
+            //Render the guest book posts 
+            dataShow.innerHTML = commentValues.map((user) => `<div id="commentContainer">
+   
+   <p><span>${user.name}</span></p> <p>${user.message} </p>
+   <div id="date">${user.date}</div>
+   </div>
+   `)
         } else {
             console.log("No data available");
         }
@@ -116,4 +126,4 @@ function removeData() {
     //to modify/delete own submission.
 }
 
-sendBtn.addEventListener("click", insertData)
+form.addEventListener("submit", insertData)

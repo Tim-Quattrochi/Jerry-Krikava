@@ -4,14 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href='https://fonts.googleapis.com/css?family=Caladea' rel='stylesheet'>
     <link rel="stylesheet" href="style.css" />
     <title>Guest Book</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
-      integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
-      crossorigin="anonymous"
-    />
+    
   </head>
   <body>
     <header class="header-container">
@@ -29,15 +25,22 @@
       
     </header>
     
-    <h1>Sign the Guest Book</h1>
+    <h1 id="gb-title">Sign the Guest Book</h1>
     <form id="form">
       <div id="book-container">
-        <label for="name">Enter your name:</label>
-        <input type="text" name="name" id="name" />
+        <label class="custom-field" for="name">
+        <input type="text" 
+        name="name" 
+        id="name"  
+        minlength="3"  
+        maxlength="20"    
+        placeholder="enter your name"  
+        required/>
+      </label>
 
-        <label id="msg-header" for="message"
-          >Leave a message for the guest book!</label
-        >
+      
+      <label id="msg-header" for="message">
+      </label>
 
         <textarea
           id="message"
@@ -45,23 +48,26 @@
           rows="15"
           cols="50"
           autocomplete="off"
+          placeholder= "Enter your message"
+          minlength="5"
+          maxlength="500"
           required
         >
+      
         </textarea>
-        <button id="send">Add message</button>
+        <button type="submit"  id="send">Sign Guestbook</button>
       </div>
       <div id="msg">
         <pre></pre>
       </div>
     </form>
 
+      
     <p id="dataShow"></p>
 
-    <p id="postName" type="text"></p>
-    <input id="findName" type="text">
-    <button id="find">Find by name</button>
 
-    <script type="module" src="./gbook.js"></script>
+
+    <script type="module" src="gbook.js"></script>
     
   </body>
  
