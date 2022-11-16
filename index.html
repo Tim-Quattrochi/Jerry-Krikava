@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
     <title>Jerry's Website</title>
     <link rel="stylesheet" href="style.css" />
     <script
@@ -13,45 +16,89 @@
   </head>
 
   <body>
-    <header class="header-container">
-      <h1>Jerry's remembrance page.</h1>
-      <img src="img/Jerry copy.png" alt="Picture of an Autism puzzle piece" />
-      <nav class="nav-container">
-        <a href="#">Home</a>
-        <a href="#">Pictures</a>
-        <a href="guest-book.html">Guest Book</a>
-        <a href="#">About</a>
-      </nav>
-    </header>
-
-    <div></div>
-    <div class="carousel-container">
-      <i class="fa-solid fa-arrow-right-long" id="next"></i>
-      <i class="fa-solid fa-arrow-left-long" id="previous"></i>
-      <div tabindex="-1" class="carousel-slide">
+    <div class="header-container">
+      <header>
+        <h1>Jerry's remembrance page.</h1>
         <img
-          src="img/BA920001-F4FE-49E6-8EC2-B3ADE6315C86_1_201_a.jpeg"
-          id="lastClone"
+          src="img/logo.svg"
+          alt="Picture of an Autism puzzle piece"
         />
-        <img src="./img/jerryProm.jpeg" />
-        <img src="./img/hopeProm.jpeg" />
-        <img src="./img/jerryFlower.jpeg" />
-        <img src="/img/krystleJerryMatt.jpeg" />
-        <img src="img/meAndJErry.JPG" />
-        <img src="img/jerryHopeSchool.jpeg" />
-        <img src="img/meMomJerryMatt.jpg" />
-        <img src="img/Layla.png" />
-        <img src="img/jerryWithUnknown.jpg" />
-        <img src="img/668565105.393840.jpg" />
-        <img src="img/422B6CF1-D3AA-4490-A3AA-669565351475_1_105_c.jpeg" />
-        <img src="img/BA920001-F4FE-49E6-8EC2-B3ADE6315C86_1_201_a.jpeg" />
-        <img src="./img/jerryProm.jpeg" id="firstClone" />
+        <nav class="nav-container">
+          <a href="#">Home</a>
+          <a href="#">Pictures</a>
+          <a href="#">About</a>
+        </nav>
+      </header>
+    </div>
+
+    <div class="container">
+      <div class="carousel-container">
+        <i class="fa-solid fa-arrow-right-long" id="next"></i>
+        <i class="fa-solid fa-arrow-left-long" id="previous"></i>
+        <div tabindex="-1" class="carousel-slide">
+          <img
+            class="image"
+            src="img/BA920001-F4FE-49E6-8EC2-B3ADE6315C86_1_201_a.jpeg"
+            id="lastClone"
+          />
+          <img src="./img/jerryProm.jpeg" />
+          <img src="./img/hopeProm.jpeg" />
+          <img src="./img/jerryFlower.jpeg" />
+          <img src="/img/krystleJerryMatt.jpeg" />
+          <img src="img/meAndJErry.JPG" />
+          <img src="img/jerryHopeSchool.jpeg" />
+          <img src="img/meMomJerryMatt.jpg" />
+          <img src="img/Layla.png" />
+          <img src="img/jerryWithUnknown.jpg" />
+          <img src="img/668565105.393840.jpg" />
+          <img
+            src="img/422B6CF1-D3AA-4490-A3AA-669565351475_1_105_c.jpeg"
+          />
+          <img
+            src="img/BA920001-F4FE-49E6-8EC2-B3ADE6315C86_1_201_a.jpeg"
+          />
+          <img src="./img/jerryProm.jpeg" id="firstClone" />
+        </div>
       </div>
     </div>
-    <p id="explanation">
-      If you click on the slider you can then use your right and left arrow keys
-      to move the image slider.
-    </p>
-    <script type="javascript" src="main.js"></script>
+    <h1 id="gb-title">Sign the Guest Book</h1>
+    <form id="form">
+      <div id="book-container">
+        <label class="custom-field" for="name">
+          <input
+            type="text"
+            name="name"
+            id="name"
+            minlength="3"
+            maxlength="20"
+            placeholder="enter your name"
+            required
+          />
+        </label>
+
+        <label id="msg-header" for="message"> </label>
+
+        <textarea
+          id="message"
+          name="message"
+          rows="15"
+          cols="50"
+          autocomplete="off"
+          placeholder="Enter your message"
+          minlength="5"
+          maxlength="500"
+          required
+        >
+        </textarea>
+        <button type="submit" id="send">Sign Guestbook</button>
+      </div>
+      <div id="msg">
+        <pre></pre>
+      </div>
+    </form>
+
+    <p id="dataShow"></p>
+    <script type="module" src="gbook.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>
